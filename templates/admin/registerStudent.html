@@ -1,0 +1,76 @@
+{% extends "./main.html" %}
+{% load static %}
+
+{% block title %}register student{% endblock title %}
+
+
+{% block content %}
+<!------------------ Register Student start ------------>
+ <div class="register container">
+    <h3>Student details</h3>
+    <hr>
+    <form action="">
+        <div class="studentPic">
+            <p>Photo<span class="required">*</span></p>
+            <img src="{% static 'images/admin/userProfile.jfif' %}" id="profile-picture" data-default-src="{% static 'images/admin/userProfile.jfif' %}">
+            <label for="input-image">Choose file</label>
+            <label for="remove-image" id="remove-image">Remove</label>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-image">
+        </div>
+
+        <div class="student-details">
+            <div class="input-box">
+                <label for="firstName">First Name<span class="required">*</span></label>
+                <input type="text" id="firstName" placeholder="enter first name" required>    
+            </div>
+           
+            <div class="input-box">
+                <label for="lastName">Last Name<span class="required">*</span></label>
+                <input type="text" id="lastName" placeholder="enter last name" required>    
+            </div>
+
+            <div class="input-box">
+                <label for="email">Email<span class="required">*</span></label>
+                <input type="email" id="email" placeholder="enter email" required>    
+            </div>
+
+            <div class="input-box">
+                <label for="phoneNumber">Phone Number<span class="required">*</span></label>
+                <input type="text" id="phoneNumber" placeholder="enter phone phoneNumber" required>    
+            </div>
+
+            <div class="input-box">
+                <label for="course">Registered Course<span class="required">*</span></label>
+                <select name="" id="course" required>
+                    <option value="" disabled selected>Select Course</option>
+                    <option value="foundations">Foundations</option>
+                    <option value="frontend">Frontend</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label for="courseFee">Course fee<span class="required">*</span></label>
+                <input type="text" id="courseFee" value="100.00N" disabled>    
+            </div>
+
+            <div class="input-box">
+                <label for="amountPaid">Amount Paid<span class="required">*</span></label>
+                <input type="text" id="course" placeholder="amount student paid">    
+            </div>
+
+            <div class="input-box">
+                <label for="balance">Outstanding Amount<span class="required">*</span></label>
+                <input type="text" id="balance" placeholder="balance to be paid">    
+            </div>
+
+            <div class="input-box">
+                <label for="addres">Address<span class="required">*</span></label>
+                <textarea id="address" cols="35" rows="8" placeholder="student address"></textarea> 
+                <button class="register-btn" type="submit">Register</button>  
+            </div>
+        </div>
+    </form>
+</div>
+<script src="{% static 'js/admin/registerStudents.js' %}"></script>
+<!------------------ Register student end ------------>
+{% endblock content %}

@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/admin/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin/registerStudent.css' %}">
+    <link rel="stylesheet" href="register.css">
+    <script src="https://kit.fontawesome.com/db19a8a095.js" crossorigin="anonymous"></script>
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <!-------------- Header------------>
+    <!-------------- Header------------>
+    <!-------------- Header------------>
+    <div class="wrapper">
+        <div class="sidenav" id="side-nav">
+            <div class="logo">
+                <img src="{% static 'images/admin/2.svg' %}" alt="" class="src">
+                <h1>Code badger</h1>
+                <i class="fa-solid fa-x" onclick="closeNav()"></i>
+            </div>
+    
+            <nav>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-house"></i>
+                        <a href="{% url 'dashBoardHome' %}">Dashboard</a>
+                    </li>
+                   
+                    <li class="dropdown">
+                        <i class="fa-solid fa-house"></i>
+                        <a href="#">student</a>
+                        <i class="fa-solid fa-caret-down drop"></i>
+                        <ul class="dropdown-content">
+                            <li><a href="hhh">Student</a></li>
+                            <li><a href="#">Student Details</a></li>
+                            <li><a href="{% url 'registerStudent' %}">Add Student</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <i class="fa-solid fa-house"></i>
+                        <a href="#">Courses</a>
+                        <i class="fa-solid fa-caret-down drop"></i>
+                        <ul class="dropdown-content">
+                            <li><a href="hhh">Frontend</a></li>
+                            <li><a href="#">Data Science</a></li>
+                            <li><a href="#">Python</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-house"></i>
+                        <a href="#">Dashboard</a>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="menu">
+            <i class="fa-solid fa-bars" onclick="openNav()"></i>
+        </div>
+
+        <div class="main-content ">
+
+            <!------------------ page header start ------------>
+            <div class="page-heading container">
+                <h2><i class="fa-solid fa-arrow-right"></i> DashBoard</h2>
+
+                <div class="icons">
+                <i class="fa-solid fa-bell notification"></i>
+                <i class="fa-solid fa-gear"></i>
+                <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+             <!------------------ page header end ------------>
+
+
+              <!------------------ content start ------------>
+                
+                {% block content %} {% endblock content %}
+                    
+              <!------------------ content end ------------>
+
+        </div>
+
+    </div>
+
+    <script src="{% static 'js/admin/main.js' %}"></script>
+</body>
+</html>

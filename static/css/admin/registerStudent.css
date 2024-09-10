@@ -1,0 +1,139 @@
+.register {
+    background-color: white;
+    margin-top: 30px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.register h3 {
+    color: navy;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.register hr {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.studentPic {
+    margin-left: 15px;
+    width: 20%;
+}
+
+.studentPic p {
+    font-size: 12px;
+    color: #4B49AC;
+}
+
+.required {
+    color: red;
+}
+
+.studentPic img {
+    width: 120px;
+    border-radius: 5px;
+    display: block;
+}
+
+.studentPic label {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #4B49AC;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#remove-image {
+    color: red;
+    background-color: rgb(247, 198, 198);
+}
+
+.studentPic input {
+    display: none;
+}
+
+.student-details {
+    width: 70%
+}
+
+.student-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.student-details .input-box {
+    width: 45%;
+}
+
+.student-details label {
+    display: block;
+    margin-bottom: 10px;
+    color: #4B49AC;
+    font-size: 14px;
+}
+
+.student-details input,
+select,
+textarea {
+    width: 95%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(200, 193, 193);
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.student-details input:focus,
+select:focus,
+textarea:focus {
+    border: 1px solid #4B49AC;
+}
+
+.register-btn {
+    background-color: #4B49AC;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 700px) {
+    form {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    form .studentPic {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .student-details {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .student-details .input-box {
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    .student-details .input-box input {
+        width: 95%;
+    }
+}
