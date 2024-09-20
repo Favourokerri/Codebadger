@@ -1,0 +1,60 @@
+{% extends "./main.html" %}
+{% load static %}
+
+{% block title %}Create Course{% endblock title %}
+{% block stylelinks %}
+    <link rel="stylesheet" href="{% static 'css/admin/course.css' %}">
+{% endblock stylelinks %}
+    
+{% block content %}
+    <div class="course-container container">
+        <h1> All Courses</h1>
+        <p> view and manage your Courses</p>
+
+        <div class="search">
+            <form action="">
+                <input type="search" placeholder="search course">
+            </form>
+            <div class="search-suggestion">
+                <ul>
+                    <li>python</li>
+                    <li>python</li>
+                    <li>python</li>
+                    <li>python</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="status">
+            <a href="{% url 'published_course' %}"  id="publishedLink"> Published</a>
+            <a href="{% url 'draft_course' %}" id="draftLink"> Drafts</a>
+        </div>
+
+        <div class="course-box">
+        
+        {% if courses %}
+
+            {% for course in courses %}
+                <div class="course1">
+                    <div class="image">
+                        <img src="{{ course.course_image.url }}">
+                        <p>N100k</p>
+                    </div>
+                    <h2>{{ course.name }}</h2>
+                    <p>Registered Students: 5 </p>
+                    <p class="modules"> Number of modules: 5 </p>
+                    <div class="action">
+                        <a href="#">Edith</a>
+                        <a href="#">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1 style="margin-top: 20px;"> No Course Found</h1>
+        {% endif %}
+        
+    </div>
+
+    </div>
+    <script src="{% static 'js/admin/course.js' %}"></script>
+{% endblock content %}  

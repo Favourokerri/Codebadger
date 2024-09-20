@@ -1,0 +1,265 @@
+.course {
+    background-color: white;
+    margin-top: 30px;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.course h3 {
+    color: navy;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.course hr {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.course form {
+    margin: 40px;
+}
+
+.required {
+    color: red;
+}
+
+.course form label {
+    display: inline-block;
+    width: 100%;
+    color: gray;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+.hide {
+    display: none;
+}
+
+.course-image {
+    width: 130px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    background-color: #4B49AC;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+
+.course form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(200, 193, 193);
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.course form input:focus {
+    border: 1px solid #4B49AC;
+}
+
+.course form button {
+    background-color: #4B49AC;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.search {
+    margin-top: 20px;
+    font-size: 18px;
+    width: 100%;
+    position: sticky;
+    top: 3px;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+
+.search input {
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.search input:focus {
+    border: 1px solid #4B49AC;
+}
+
+.search .search-suggestion ul {
+    background-color: white;
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    border-radius: 5px;
+    border-top: 1px solid #4B49AC;
+    padding: 20px;
+    display: none;
+}
+
+.search .search-suggestion ul li {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.status {
+    text-align: left;
+}
+
+.status a {
+    display: inline-block;
+    padding: 10px;
+    background-color: aliceblue;
+    margin-top: 50px;
+    margin-left: 30px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+
+}
+
+a.status-active {
+    background-color: rgb(216, 93, 93);
+    color: white;
+}
+
+.course-container {
+    margin-top: 30px;
+    padding-bottom: 40px;
+    text-align: center;
+    color: #080836;
+}
+
+.course-box {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.course1 {
+    width: 230px;
+    border: 1px solid black;
+    height: auto;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 30px;
+}
+
+.course1 .image {
+    position: relative;
+}
+
+.course1 img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.course1 .image p {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(216, 93, 93);
+    color: white;
+    padding: 3px;
+    width: 60px;
+    text-align: center;
+    border-radius: 5px;
+    animation: price 2s;
+    animation-fill-mode: forwards;
+}
+
+.course1 h2 {
+    background-color: #4B49AC;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.course1 p {
+    color: #4B49AC;
+    margin-left: 10px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    text-align: left;
+
+}
+
+.course1 .modules {
+    margin-bottom: 20px;
+}
+
+
+.course-box .action {
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-box .action a {
+    background-color: #4B49AC;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    width: 80px;
+    border-radius: 5px;
+}
+
+@keyframes price {
+    100% {
+        transform: rotate(360deg) translate(15px, 15px);
+    }
+}
+
+@media (max-width:700px) {
+    .search {
+        top: 65px;
+    }
+
+    .course-box {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .course1 {
+        width: 100%;
+        padding: 3px;
+        margin-bottom: 30px;
+        height: 380px;
+        margin-top: 10px;
+    }
+
+    .course1 img {
+        height: 200px;
+    }
+
+    .status a {
+        margin-bottom: 20px;
+    }
+}

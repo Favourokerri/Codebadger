@@ -42,6 +42,7 @@ body {
     height: 100vh;
     background-color: #4B49AC;
     color: white;
+    z-index: 1100;
 }
 
 .logo {
@@ -85,11 +86,18 @@ body {
     color: white;
     display: none;
     font-size: 30px;
+    position: fixed;
+    top: 0;
+    z-index: 900;
 }
 
 .main-content {
     width: 80vw;
     margin-left: 200px;
+}
+
+nav {
+    position: fixed;
 }
 
 nav ul {
@@ -219,6 +227,10 @@ nav ul li a {
     /*============main content ========*/
     .main-content {
         width: 95%;
+    }
+
+    .page-heading {
+        margin-top: 90px;
     }
 
     .page-heading h2 {

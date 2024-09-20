@@ -3,6 +3,10 @@
 
 {% block title %}register student{% endblock title %}
 
+{% block stylelinks %}
+    <link rel="stylesheet" href="{% static 'css/admin/registerStudent.css' %}">
+{% endblock stylelinks %}
+    
 
 {% block content %}
 <!------------------ Register Student start ------------>
@@ -43,8 +47,9 @@
                 <label for="course">Registered Course<span class="required">*</span></label>
                 <select name="" id="course" required>
                     <option value="" disabled selected>Select Course</option>
-                    <option value="foundations">Foundations</option>
-                    <option value="frontend">Frontend</option>
+                    {% for course in courses %}
+                        <option value="foundations">{{ course.name }}</option>
+                    {% endfor %}
                 </select>
             </div>
 
