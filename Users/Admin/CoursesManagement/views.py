@@ -74,13 +74,13 @@ def search_suggestions(request):
         else:
             return JsonResponse({'error': 'please enter a search parameter'})
     
-    if query:
-        results = Course.objects.filter(name__icontains=query)
     else:
-       messages.warning(request, "please enter a search parameter")
-       redirect("course")
-    
-    return render(request, 'admin/courses.html', {'results': results})
+        if query:
+            results = Course.objects.filter(name__icontains=query)
+        else:
+            messages.warning(request, "please enter a search parameter")
+            return redirect("courses")
+    return render(request, 'admin/courses.html', {'courses': results})
 
 def single_course(request, id):
     try:

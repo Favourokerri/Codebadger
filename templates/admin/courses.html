@@ -12,8 +12,8 @@
         <p> view and manage your Courses</p>
 
         <div class="search">
-            <form action="">
-                <input type="search" oninput="searchSuggestion(event)" 
+            <form action="{% url 'search_suggestions' %}" method="get">
+                <input type="search" name="q" oninput="searchSuggestion(event)" 
                 placeholder="search course" id="course_bar">
             </form>
             <div class="search-suggestion">
