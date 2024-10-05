@@ -51,6 +51,9 @@ def published_course(request):
     """ view to see published courses"""
     published_courses = Course.objects.filter(status='published')
 
+    for course in published_courses:
+        course.fee = "{:,.2f}".format(course.fee) 
+
     context = {'courses': published_courses}
     return render(request, 'admin/courses.html', context)
 
@@ -59,6 +62,9 @@ def draft_course(request):
     """ view to courses saved as draft"""
     draft_courses = Course.objects.filter(status='draft')
 
+    for course in draft_courses:
+        course.fee = "{:,.2f}".format(course.fee) 
+    
     context = {'courses': draft_courses}
     return render(request, 'admin/courses.html', context)
 
@@ -76,11 +82,13 @@ def search_suggestions(request):
     
     else:
         if query:
-            results = Course.objects.filter(name__icontains=query)
+            courses = Course.objects.filter(name__icontains=query)
+            for course in courses:
+                course.fee = "{:,.2f}".format(course.fee) 
         else:
             messages.warning(request, "please enter a search parameter")
             return redirect("courses")
-    return render(request, 'admin/courses.html', {'courses': results})
+    return render(request, 'admin/courses.html', {'courses': courses})
 
 def single_course(request, id):
     try:
