@@ -13,14 +13,12 @@
 
         <div class="search">
             <form action="">
-                <input type="search" placeholder="search course">
+                <input type="search" oninput="searchSuggestion(event)" 
+                placeholder="search course" id="course_bar">
             </form>
             <div class="search-suggestion">
-                <ul>
-                    <li>python</li>
-                    <li>python</li>
-                    <li>python</li>
-                    <li>python</li>
+                <ul id="search_suggestions">
+        
                 </ul>
             </div>
         </div>
@@ -38,7 +36,7 @@
                 <div class="course1">
                     <div class="image">
                         <img src="{{ course.course_image.url }}">
-                        <p>N100k</p>
+                        <p>{{ course.fee}}</p>
                     </div>
                     <h2>{{ course.name }}</h2>
                     <p>Registered Students: 5 </p>

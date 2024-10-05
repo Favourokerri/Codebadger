@@ -1,7 +1,8 @@
 """
     this file contains all views related to courses
 """
-from django.shortcuts import  render, redirect
+from django.shortcuts import  render, redirect, get_object_or_404
+from django.http import HttpResponseBadRequest, JsonResponse
 from django.contrib import messages
 from django.db import IntegrityError
 from Users.Admin.adminDashBoard import decorators
@@ -60,3 +61,35 @@ def draft_course(request):
 
     context = {'courses': draft_courses}
     return render(request, 'admin/courses.html', context)
+
+@decorators.adminOnly
+def search_suggestions(request):
+    query = request.GET.get('q')
+
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        if query:
+            results = Course.objects.filter(name__icontains=query)
+            data = list(results.values('id', 'name'))
+            return JsonResponse({'result': data})
+        else:
+            return JsonResponse({'error': 'please enter a search parameter'})
+    
+    if query:
+        results = Course.objects.filter(name__icontains=query)
+    else:
+       messages.warning(request, "please enter a search parameter")
+       redirect("course")
+    
+    return render(request, 'admin/courses.html', {'results': results})
+
+def single_course(request, id):
+    try:
+        course = get_object_or_404(Course, id=id)
+        print(course)
+        context = {"course": course}
+
+    except Exception as e:
+        messages.error(request, 'some error occured')
+        return redirect('course')
+
+    return render(request, 'admin/singleCourse.html', context)
